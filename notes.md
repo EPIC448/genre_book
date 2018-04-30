@@ -1,8 +1,9 @@
 What should our book Porjet do.
  
- 1 build a gem
- 2 Makes sure there are working with dummy data
- 3 Type out what your CLI need to look like
+ 1 DONE....build a gem d
+ 2 DONE....Makes sure there are working with dummy data
+ 3 DONE....Type out what your CLI need to look like
+ 
  4 Then Connect the scraper method to it. 
  5 CLI list all the Genres
  6 Option to choose any Genres
