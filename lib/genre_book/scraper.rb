@@ -24,7 +24,7 @@ class GenreBook::Scraper
             genre = self.new
             doc.search("ul.nav.nav-list ul a").map do |container|
     
-            genre.name = doc.css(h1).text.strip     
+            genre.name = true   
             genre.url =  true
             genre.product_details = true
             genre.product_info = true

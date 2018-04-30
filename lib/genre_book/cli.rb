@@ -26,7 +26,6 @@ class GenreBook::CLI
     def list_genre  
         @genres = GenreBook::Scraper.all_genre
         @genres.each.with_index(1) do |genre, index| 
-            binding.pry
         puts "#{index} - #{genre.name} - #{genre.product_details} - #{genre.info}"
         end
     end
