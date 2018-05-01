@@ -1,7 +1,7 @@
 # CLI COntroller
 class GenreBook::CLI
 
-    # checking.
+    
     def call
         puts "Welocme, Type genre to see list of all genres"
         puts "OR"
@@ -27,20 +27,20 @@ class GenreBook::CLI
     def list_genre  
         @genres = GenreBook::Scraper.all_genre
         @genres.each.with_index(1) do |genre, index| 
-        puts "#{index} - #{genre.name} - #{genre.product_details} - #{genre.info}"
+        puts "#{index}. #{genre.name} - #{genre.book_url}"
         end
     end
   
 
 
     def list_book
-        puts "Enter the number of book you want to see OR exit ."
+        input = nil
+        while input != "exit"
+        puts "Enter the number of book you want to see OR exit ."     
         input = gets.strip.downcase
-        
-        if input ==  "1"
-            puts  <<-DOC 
-             book 1   
-             DOC
+        if input.to_i > 0
+            genre_book = @genres[input.to_i-1]
+            puts "#{i + 1}. #{genre_book.book_name} - #{genre_book.book_url} - #{genre_book.book_info}"
 
         elsif input ==  "2"
             puts "book 2"
@@ -51,7 +51,8 @@ class GenreBook::CLI
         else
             list_book
         end
-
+    
+    end
     end
 
 
