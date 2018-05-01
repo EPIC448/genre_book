@@ -1,6 +1,7 @@
 # CLI COntroller
 class GenreBook::CLI
 
+    # checking.
     def call
         puts "Welocme, Type genre to see list of all genres"
         puts "OR"
