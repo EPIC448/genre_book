@@ -15,7 +15,8 @@ class GenreBook::CLI
               list_genre
             #select genre number
         elsif input == "books"
-              list_book
+            #   list_book
+            book_list
         elsif input == "Exit"
             goodbye
         else
@@ -26,17 +27,27 @@ class GenreBook::CLI
 
     def list_genre  
         @genres = GenreBook::Scraper.all_genre
-        @genres.each.with_index(1) do |genre, index| 
-        puts "#{index}. #{genre.name} - #{genre.book_url}"
+        # @genres.each.with_index(1) do |genre, index|
+        #  puts "#{index}. #{genre.name} - #{genre.book_url}"
+        # end
+    end
+      
+
+
+    def book_list
+        # list all the book in that Genre ... Form genre.book_url
+        @book_list = GenreBook::Scraper.all_genre
+        @book_list.map.with_index(1) do |book, index|
+          binding.pry
+            puts "#{index}. #{book.book_url}"
         end
     end
-  
 
 
     def list_book
         input = nil
         while input != "exit"
-        puts "Enter the number of book you want to see OR exit ."     
+        puts "Enter book number you want to see OR exit"     
         input = gets.strip.downcase
         if input.to_i > 0
             genre_book = @genres[input.to_i-1]
