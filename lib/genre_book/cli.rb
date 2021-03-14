@@ -37,8 +37,8 @@ class GenreBook::CLI
     def book_list
         # list all the book in that Genre ... Form genre.book_url
         @book_list = GenreBook::Scraper.all_genre
-        @book_list.map.with_index(1) do |book, index|
-          binding.pry
+          @book_list.each.with_index(1) do |book, index|
+          
             puts "#{index}. #{book.book_url}"
         end
     end

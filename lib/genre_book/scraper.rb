@@ -1,6 +1,7 @@
 class GenreBook::Scraper
 
     attr_accessor :name, :book_name, :book_price, :book_url, :book_info
+    
 
     def self.all_genre
      self.concepts
@@ -14,9 +15,23 @@ class GenreBook::Scraper
                 genres << self.books
                 genres << self.scrape_detail
 
-                genres
+                #answer is in the book scraper.
+                
+binding.pry
+                genre
+    
 
         end
+
+
+         def self.get_books
+            "get all the list of books"
+         end
+
+         def self.book_info
+            "get all the book information"
+
+         end
 
 
         def self.scrape_genre
